@@ -68,6 +68,7 @@ export const Folder: React.FC = () => {
         current_directory: `${current_directory}/${file.name}`,
       });
     } else {
+      console.log('clicked', file);
       updateAppState({
         current_file: `${current_directory}/${file.name}`,
         current_file_type: file.type,
@@ -78,7 +79,7 @@ export const Folder: React.FC = () => {
 
   return (
     <>
-      <div className="w-screen p-1 m-1">
+      <div className="w-full p-1 m-1">
         <div className="cursor-pointer" onClick={goBack}>
           Back
         </div>

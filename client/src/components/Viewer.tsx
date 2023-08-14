@@ -21,7 +21,6 @@ const Viewer: React.FC = () => {
           ? 'fixed inset-0 flex items-center justify-center'
           : 'hidden'
       } bg-black bg-opacity-50 z-50 transition-opacity duration-300`}
-      onClick={closeModal}
     >
       <div className="bg-white p-8 rounded-lg shadow-lg">
         {current_file && current_file_type === 'image' && (
@@ -30,6 +29,9 @@ const Viewer: React.FC = () => {
         {current_file && current_file_type === 'video' && (
           <VideoPlayer videoPath={current_file} />
         )}
+      </div>
+      <div className="cursor-pointer" onClick={closeModal}>
+        Close
       </div>
     </div>
   );
